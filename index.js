@@ -8,13 +8,9 @@ tweetBtn.addEventListener('click', function(){
 })
 
 function getFeedHtml(){
-    
-    /*
-    Challenge:
-    1. Replace the for of with a forEach.
-    */
           
         let feedHtml = ``
+
         tweetsData.forEach(function(tweet){
             feedHtml += `
     <div class="tweet">
@@ -42,4 +38,9 @@ function getFeedHtml(){
        return feedHtml 
     }
     
-    console.log(getFeedHtml())
+    function render(){
+        const feed = document.getElementById('feed')
+        feed.innerHTML = getFeedHtml()
+    }
+
+    render()
