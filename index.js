@@ -39,8 +39,10 @@ function getFeedHtml(){
     }
     
     function render(){
-        const feed = document.getElementById('feed')
-        feed.innerHTML = getFeedHtml()
+        const feed = document.getElementById('feed').innerHTML = getFeedHtml()
+        // or
+        // const feed = document.getElementById('feed')
+        // feed.innerHTML = getFeedHtml()
     }
 
     render()
