@@ -20,7 +20,12 @@ function handleLikeClick(tweetId){
         return tweet.uuid === tweetId
     })[0]
     
-    targetTweetObj.likes++
+    if (targetTweetObj.isLiked){
+        targetTweetObj.likes--
+    }else{
+        targetTweetObj.likes++
+    }
+    
     render()
 } 
 function getFeedHtml(){
