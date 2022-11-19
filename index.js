@@ -11,8 +11,11 @@ tweetBtn.addEventListener('click', function(){
 document.addEventListener('click', function(e){
     // so we wan to log out the content of the data-like attribute, .data-set to see what element the data has
     // if the element we are clicking on has a data attribute called like, if we click on anything that is not like, it  returns undefined
-    if(e.target.dataset.like)
+    if(e.target.dataset.like){
     handleLikeClick(e.target.dataset.like)
+    }else if(){
+
+    }
 })
 
 function handleLikeClick(tweetId){
@@ -36,7 +39,12 @@ function handleLikeClick(tweetId){
 function handleRetweetClick(tweetId){
     
 }
-
+// Challenge:
+// 2. Find the retweeted tweet's object in tweetsData 
+//    and save it to a const.
+// 3. Increment or decrement the retweet count of the 
+//    tweet and flip its isRetweeted boolean.
+// 4. Call the render function.
 function getFeedHtml(){
     let feedHtml = ``
     
