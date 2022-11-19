@@ -38,15 +38,16 @@ function handleLikeClick(tweetId){
 
 function handleRetweetClick(tweetId){
     const targetTweetObj = filter(function(tweet){
+        return tweet.uuid === tweetId
+    })[0]
 
-    })
+    if(targetTweetObj.isRetweeted){
+        targetTweetObj.retweets--
+    }else{
+        targetTweetObj.retweets++
+    }
 }
-// Challenge:
-// 2. Find the retweeted tweet's object in tweetsData 
-//    and save it to a const.
-// 3. Increment or decrement the retweet count of the 
-//    tweet and flip its isRetweeted boolean.
-// 4. Call the render function.
+
 function getFeedHtml(){
     let feedHtml = ``
     
