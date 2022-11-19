@@ -32,6 +32,11 @@ function handleLikeClick(tweetId){
     //targetTweetObj.isLiked = !targetTweetObj.isLiked
     render()
 } 
+
+function handleRetweetClick(tweetId){
+    
+}
+
 function getFeedHtml(){
     let feedHtml = ``
     
