@@ -20,12 +20,16 @@ function handleLikeClick(tweetId){
         return tweet.uuid === tweetId
     })[0]
     
+    // so this flips a boolean from true to false and false to true
     if (targetTweetObj.isLiked){
         targetTweetObj.likes--
+        targetTweetObj.isLiked = false
     }else{
         targetTweetObj.likes++
+        targetTweetObj.isLiked = true
     }
-    
+    // to refactor this code we can remove line 26 and 29 and keep line 32
+    //targetTweetObj.isLiked = !targetTweetObj.isLiked
     render()
 } 
 function getFeedHtml(){
