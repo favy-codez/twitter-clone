@@ -13,8 +13,8 @@ document.addEventListener('click', function(e){
     // if the element we are clicking on has a data attribute called like, if we click on anything that is not like, it  returns undefined
     if(e.target.dataset.like){
     handleLikeClick(e.target.dataset.like)
-    }else if(e.dataset.retweets){
-        handleRetweetClick(e.dataset.retweets)
+    }else if(e.target.dataset.retweet){
+        handleRetweetClick(e.target.dataset.retweet)
     }
 })
 
@@ -37,15 +37,19 @@ function handleLikeClick(tweetId){
 } 
 
 function handleRetweetClick(tweetId){
-    const targetTweetObj = filter(function(tweet){
+    const targetTweetObj = tweetsData.filter(function(tweet){
         return tweet.uuid === tweetId
     })[0]
-
+    
     if(targetTweetObj.isRetweeted){
         targetTweetObj.retweets--
-    }else{
+    }
+    else{
         targetTweetObj.retweets++
     }
+    targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+    render()
+
 }
 
 function getFeedHtml(){
