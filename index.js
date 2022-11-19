@@ -13,8 +13,8 @@ document.addEventListener('click', function(e){
     // if the element we are clicking on has a data attribute called like, if we click on anything that is not like, it  returns undefined
     if(e.target.dataset.like){
     handleLikeClick(e.target.dataset.like)
-    }else if(){
-
+    }else if(e.dataset.retweets){
+        handleRetweetClick(e.dataset.retweets)
     }
 })
 
@@ -37,7 +37,9 @@ function handleLikeClick(tweetId){
 } 
 
 function handleRetweetClick(tweetId){
-    
+    const targetTweetObj = filter(function(tweet){
+
+    })
 }
 // Challenge:
 // 2. Find the retweeted tweet's object in tweetsData 
